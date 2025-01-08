@@ -1,0 +1,79 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<div class="text-center hero-section">
+    <!-- Hero Section -->
+    <h1>Hi, I'm Ranbir Khadka</h1>
+    <p class="tagline">Aspiring Software Developer | Tech Enthusiast | Problem Solver</p>
+    <img src="{{ profile.profile_picture.url }}" alt="{{ profile.name }}" class="rounded-circle mt-3 profile-pic" width="150">
+    <div class="mt-4">
+        <a href="#projects" class="btn btn-primary btn-cta">View My Work</a>
+        <a href="mailto:{{ profile.email }}" class="btn btn-secondary btn-cta">Contact Me</a>
+    </div>
+</div>
+
+<div class="mt-5 about-section">
+    <!-- Professional Summary -->
+    <h2>About Me</h2>
+    <p>Hello! I'm Ranbir, passionate about exploring technology and innovation. I thrive on solving problems, learning new technologies, and building impactful projects. With a foundation in Python and Django, I aim to create innovative solutions that make a difference.</p>
+    <ul>
+        <li>Proficient in Python, Django, and front-end development</li>
+        <li>Based in Ramechhap, Nepal</li>
+        <li>Excited about the intersection of technology and everyday solutions</li>
+    </ul>
+</div>
+
+<div id="projects" class="mt-5 projects-section">
+    <!-- Featured Work -->
+    <h2>Featured Work</h2>
+    <div class="project-slider">
+        <div class="project-card">
+            <img src="{% static 'img/project22.jpg'%}" alt="Project 1">
+            <div class="overlay">
+                <h5>Courier Service App</h5>
+                <p>A local delivery app connecting users with courier services, built using Django and React.</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="{% static 'img/project22.jpg'%}" alt="Project 2">
+            <div class="overlay">
+                <h5>Portfolio Website</h5>
+                <p>Personal portfolio showcasing my skills, projects, and achievements.</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="{% static 'img/project22.jpg'%}" alt="Project 3">
+            <div class="overlay">
+                <h5>Red Cross Volunteer Portal</h5>
+                <p>An online platform for managing volunteer activities and events.</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5 social-links-section">
+    <!-- Social Links -->
+    <h2>Social Links</h2>
+    <p>Connect with me:</p>
+    <ul>
+        <li><a href="https://www.linkedin.com/in/ranbir-khadka-aa2b152b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/RanbirKhadka" target="_blank">GitHub</a></li>
+    </ul>
+</div>
+
+<div class="mt-5 quick-nav-section">
+    <!-- Quick Navigation -->
+    <h2>Quick Navigation</h2>
+    <p>Explore more:</p>
+    <ul>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="mailto:{{ profile.email }}">Contact</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+

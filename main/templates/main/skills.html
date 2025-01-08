@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h2 class="mb-4 text-center">Skills & Expertise</h2>
+<p class="text-center">Discover my technical proficiencies and how I leverage them to build impactful solutions.</p>
+<div class="row">
+    {% for skill in skills %}
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-primary">{{ skill.name }}</h5>
+                <p class="card-text">Proficiency Level: <strong>{{ skill.proficiency }}/10</strong></p>
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-success" 
+                        role="progressbar" 
+                       
+                        aria-valuenow="{{ skill.proficiency }}" 
+                        aria-valuemin="0" aria-valuemax="10">
+                    </div>
+                </div>
+                <p class="card-text text-muted">{{ skill.description }}</p>
+                <a href="{{ skill.more_info_url }}" target="_blank" class="mt-auto btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mt-5 text-center">
+    <h4>Why Choose Me?</h4>
+    <p class="text-muted">With a solid foundation in software development and a passion for continuous learning, I bring dedication, creativity, and technical expertise to every project I undertake.</p>
+    <a href="{% url 'contact' %}" class="btn btn-primary">Get in Touch</a>
+</div>
+
+{% endblock %}
